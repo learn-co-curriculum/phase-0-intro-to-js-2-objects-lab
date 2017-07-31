@@ -1,0 +1,26 @@
+{
+  "name": "javascript-strings-lab",
+  "version": "0.2.0",
+  "description": "JavaScript Strings Code-along for Learn.co",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/learn-co-curriculum/javascript-strings-lab.git"
+  },
+  "keywords": [
+    "learn",
+    "flatiron school",
+    "javascript",
+    "strings",
+    "code-along"
+  ],
+  "author": "@gj",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "bugs": {
+    "url": "https://github.com/learn-co-curriculum/javascript-strings-lab/issues"
+  },
+  "homepage": "https://github.com/learn-co-curriculum/javascript-strings-lab#readme",
+  "devDependencies": {
+    "learn-browser": "^0.1.3"
+  }
+}
