@@ -27,5 +27,3 @@ As Scuber expands its fleet and its services, we need to develop a way to model 
 + `estimatedTime` — Takes a boolean argument of peak uses the argument to calculate the estimated time.  The method returns the number of minutes.  During off peak hours, a driver travels three blocks in a minute, while during peak hours a driver travels an estimated two blocks in a minute.
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/js-classes-travel-lab' title='Classes Travel in JS Lab '>Classes Travel in JS Lab</a> on Learn.co and start learning to code for free.</p>
-
-<p class='util--hide'>View <a href='https://learn.co/lessons/js-classes-travel-lab'>Classes Travel Lab</a> on Learn.co and start learning to code for free.</p>
