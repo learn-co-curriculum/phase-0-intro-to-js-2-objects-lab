@@ -1,58 +1,58 @@
 const expect = chai.expect;
 
-describe('index.js', () => {
-  describe('currentUser', () => {
-    it('is defined', () => {
-      expect(currentUser, "The 'currentUser' variable must contain a string").to.be.a('string');
-      expect(currentUser, "You need to modify the value of the 'currentUser' variable").to.not.be.empty;
-    });
-  });
+describe('driver', function() {
+  let driver;
+  before(() => {
+    driver = new Driver("Alfie", "Aug 9, 1995")
+  })
 
-  describe('welcomeMessage', () => {
-    it('contains "Welcome to Flatbook, "', () => {
-      expect(welcomeMessage).to.have.string('Welcome to Flatbook, ');
-    });
+  describe('creating a new driver', function() {
+    it('can create a Driver with a name and startDate', function() {
+      expect(driver.name).to.equal("Alfie")
+    })
 
-    it("contains the value of the 'currentUser' variable", () => {
-      expect(welcomeMessage).to.have.string(currentUser);
-    });
+    it('sets the driver startDate as a date object', function() {
+      expect(driver.startDate).to.be.instanceof(Date)
+    })
+  })
 
-    it('ends with an exclamation point!', () => {
-      expect(welcomeMessage.substr(-1)).to.eq('!');
-    });
-  });
+  describe('yearsExperienceFromBeginningOf', function() {
+    it('calculates the number of years driven given an endDate', function() {
+      expect(driver.yearsExperienceFromBeginningOf(2017)).to.equal(21)
+    })
+  })
+})
 
-  describe('excitedWelcomeMessage', () => {
-    it('contains "WELCOME TO FLATBOOK, "', () => {
-      expect(excitedWelcomeMessage).to.have.string('WELCOME TO FLATBOOK, ');
-    });
 
-    it("contains the value of the 'currentUser' variable", () => {
-      const upperCaseCurrentUser = currentUser.toUpperCase();
+describe('Route', function() {
+  let route;
 
-      expect(excitedWelcomeMessage).to.have.string(upperCaseCurrentUser);
-    });
+  describe('blocksTravelled', function() {
+    it('calculates the number of blocksTravelled', function() {
+      let route = new Route({horizontal: 'Park', vertical: '34'}, {horizontal: 'Park', vertical: '45'})
+      expect(route.blocksTravelled()).to.equal(11)
+    })
 
-    it('ends with an exclamation point', () => {
-      expect(excitedWelcomeMessage.substr(-1)).to.eq('!');
-    });
-  });
+    it('calculates the number of horizontal blocks travelled', function() {
+      let route = new Route({horizontal: '1st Avenue', vertical: '34'}, {horizontal: 'Park', vertical: '34'})
+      expect(route.blocksTravelled()).to.equal(4)
+    })
 
-  describe('shortGreeting', () => {
-    it(`contains "Welcome, "`, () => {
-      expect(shortGreeting).to.have.string('Welcome, ');
-    });
+    it('combines horizontal and vertical blocks travelled', function() {
+      let route = new Route({horizontal: '1st Avenue', vertical: '34'}, {horizontal: 'Park', vertical: '45'})
+      expect(route.blocksTravelled()).to.equal(15)
+    })
+  })
 
-    it("contains the first initial of the name stored in the 'currentUser' variable", () => {
-      const firstInitial = currentUser[0];
-      const restOfName = currentUser.slice(1);
+  describe('estimatedTime', function() {
+    it('estimates time in minutes, with travel time of three blocks in a minute', function() {
+      let route = new Route({horizontal: '1st Avenue', vertical: '34'}, {horizontal: 'Park', vertical: '45'})
+      expect(route.estimatedTime()).to.equal(5)
+    })
 
-      expect(shortGreeting).to.have.string(firstInitial);
-      expect(shortGreeting).to.not.have.string(restOfName);
-    });
-
-    it('ends with an exclamation point', () => {
-      expect(shortGreeting.substr(-1)).to.eq('!');
-    });
-  });
-});
+    it('estimates time in minutes, with travel time of two blocks in a minute during peak hours', function() {
+      let route = new Route({horizontal: '1st Avenue', vertical: '34'}, {horizontal: 'Park', vertical: '46'})
+      expect(route.estimatedTime(true)).to.equal(8)
+    })
+  })
+})
