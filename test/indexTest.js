@@ -1,7 +1,5 @@
 const expect = chai.expect;
 
-const expect = chai.expect;
-
 describe('Arrays', function() {
   beforeEach(() => {
     drivers = ['Milo', 'Otis', 'Garfield'];
