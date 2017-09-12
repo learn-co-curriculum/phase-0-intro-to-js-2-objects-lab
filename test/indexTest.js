@@ -1,58 +1,78 @@
 const expect = chai.expect;
 
-describe('driver', function() {
-  let driver;
-  before(() => {
-    driver = new Driver("Alfie", "Aug 9, 1995")
+const expect = chai.expect;
+
+describe('Arrays', function() {
+  beforeEach(() => {
+    drivers = ['Milo', 'Otis', 'Garfield'];
   })
 
-  describe('creating a new driver', function() {
-    it('can create a Driver with a name and startDate', function() {
-      expect(driver.name).to.equal("Alfie")
-    })
-
-    it('sets the driver startDate as a date object', function() {
-      expect(driver.startDate).to.be.instanceof(Date)
+  describe('drivers', function() {
+    it('defines drivers as `var drivers = ["Milo", "Otis", "Garfield"]`', function() {
+      expect(drivers).to.have.ordered.members(["Milo", "Otis", "Garfield"])
     })
   })
 
-  describe('yearsExperienceFromBeginningOf', function() {
-    it('calculates the number of years driven given an endDate', function() {
-      expect(driver.yearsExperienceFromBeginningOf(2017)).to.equal(21)
-    })
-  })
-})
-
-
-describe('Route', function() {
-  let route;
-
-  describe('blocksTravelled', function() {
-    it('calculates the number of blocksTravelled', function() {
-      let route = new Route({horizontal: 'Park', vertical: '34'}, {horizontal: 'Park', vertical: '45'})
-      expect(route.blocksTravelled()).to.equal(11)
-    })
-
-    it('calculates the number of horizontal blocks travelled', function() {
-      let route = new Route({horizontal: '1st Avenue', vertical: '34'}, {horizontal: 'Park', vertical: '34'})
-      expect(route.blocksTravelled()).to.equal(4)
-    })
-
-    it('combines horizontal and vertical blocks travelled', function() {
-      let route = new Route({horizontal: '1st Avenue', vertical: '34'}, {horizontal: 'Park', vertical: '45'})
-      expect(route.blocksTravelled()).to.equal(15)
+  describe('destructivelyAppendDriver(name)', function() {
+    it('appends a driver to the end of the drivers array', function() {
+      destructivelyAppendDriver('Ralph')
+      expect(drivers).to.have.ordered.members(["Milo", "Otis", "Garfield", "Ralph"])
     })
   })
 
-  describe('estimatedTime', function() {
-    it('estimates time in minutes, with travel time of three blocks in a minute', function() {
-      let route = new Route({horizontal: '1st Avenue', vertical: '34'}, {horizontal: 'Park', vertical: '45'})
-      expect(route.estimatedTime()).to.equal(5)
-    })
+  describe('destructivelyPrependDriver(name)', function() {
+    it('prepends a driver to the beginning of the drivers array', function() {
+      destructivelyPrependDriver("Bob")
 
-    it('estimates time in minutes, with travel time of two blocks in a minute during peak hours', function() {
-      let route = new Route({horizontal: '1st Avenue', vertical: '34'}, {horizontal: 'Park', vertical: '46'})
-      expect(route.estimatedTime(true)).to.equal(8)
+      expect(drivers).to.have.ordered.members(["Bob", "Milo", "Otis", "Garfield"])
     })
   })
+
+  describe('destructivelyRemoveLastDriver()', function() {
+    it('removes the last driver from the drivers array', function() {
+      destructivelyRemoveLastDriver()
+
+      expect(drivers).to.have.ordered.members(["Milo", "Otis"]).and.to.not.include('Garfield')
+    })
+  })
+
+  describe('destructivelyRemoveFirstDriver()', function() {
+    it('removes the First driver from the drivers array', function() {
+      destructivelyRemoveFirstDriver()
+
+      expect(drivers).to.have.ordered.members(["Otis", "Garfield"]).and.to.not.include('Milo')
+    })
+  })
+
+  describe('appendDriver(name)', function() {
+    it('appends a driver to the drivers array and returns a new array, leaving the drivers array unchanged', function() {
+      expect(appendDriver("Broom")).to.have.ordered.members(["Milo", "Otis", "Garfield", "Broom"])
+
+      expect(drivers).to.have.ordered.members(["Milo", "Otis", "Garfield"])
+    })
+  })
+
+  describe('prependDriver(name)', function() {
+    it('prepends a driver to the drivers array and returns a new array, leaving the drivers array unchanged', function() {
+      expect(prependDriver("Arnold")).to.have.ordered.members(["Arnold", "Milo", "Otis", "Garfield"])
+
+      expect(drivers).to.have.ordered.members(["Milo", "Otis", "Garfield"])
+    })
+  })
+
+  describe('removeLastDriver()', function() {
+    it('removes the last driver in the drivers array and returns a new array, leaving the drivers array unchanged', function() {
+      expect(removeLastDriver()).to.have.ordered.members(["Milo", "Otis"])
+
+      expect(drivers).to.have.ordered.members(["Milo", "Otis", "Garfield"])
+    })
+  })
+
+  describe('removeFirstDriver()', function() {
+    it('removes the first driver from the drivers array and returns a new array, leaving the drivers array unchanged', function() {
+      expect(removeFirstDriver()).to.have.ordered.members(["Otis", "Garfield"])
+      expect(drivers).to.have.ordered.members(["Milo", "Otis", "Garfield"])
+    })
+  })
+
 })
