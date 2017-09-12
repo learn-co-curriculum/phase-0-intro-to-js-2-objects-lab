@@ -47,4 +47,4 @@ If you open up `test/indexTest.js`, you will see that in the `beforeEach` block 
 
 ## Resources
 
-<p class='util--hide'>View <a href='https://learn.co/lessons/javascript-arrays-lab'>Javascript Arrays Lab</a> on Learn.co and start learning to code for free.</p>
+<p class='util--hide'>View <a href='https://learn.co/lessons/javascript-array-lab'>Javascript Array Lab</a> on Learn.co and start learning to code for free.</p>
