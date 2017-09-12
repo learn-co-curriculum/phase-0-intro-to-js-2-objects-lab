@@ -1,31 +1,50 @@
-# Classes in JS Classes Travel
+JavaScript Arrays Lab
+---
 
 ## Objectives
-+ Use class syntax to construct objects
-+ Use the constructor method to set initial attributes
 
-## Instructions
+1. Practice writing arrays
+2. Practice manipulating arrays
+3. Explain how to manipulate arrays in a non-destructive way
 
-As Scuber expands its fleet and its services, we need to develop a way to model its drivers and their routes.  In this lab, you will use the class syntax to create a `Driver` class and a `Route` class.
+## Introduction
 
-**Driver**
+Previously, we've learned about how arrays work. We know that `push()` pushes elements onto the ends of arrays, and `pop()` pops them off; similarly, `unshift()` adds elements to the beginnings of arrays, and `shift()` pulls them off.
 
-* A driver can be initialized with a name, and a string representing the day that he joined Scuber.  Add the following methods and attributes to the class:
+Now it's time to put what we've learned to the test.
 
-+ `startDate` — returns a JavaScript Date object.  You may to reference some documentation on how dates work in JavaScript.
+## What's with all this destruction?
 
-+ `yearsExperienceFromBeginningOf` — takes an argument of a year and returns the number of years since the driver's startDate
+You might have noticed that our tests are looking for functions like `destructivelyAppendDriver()` — what's up with that?
 
-**Route**
+We want to distinguish between actions that _mutate_ ("change") their underlying structures (like `pop()`, `push()`, `shift()`, and `unshift()`) and those functions that leave those structures untouched.
 
-* A route is initialized with two arguments, a `beginningLocation` and an `endingLocation`.  Both of these arguments are JavaScript objects with an attributes of horizontal and vertical.  
+In general, it's good practice to avoid mutating a program's state whenever possible. So we want to call out these methods as destructive, since mutating state means we don't always know what we're dealing with. Indeed, these mutations mean that we need to refresh the test environment after every test to make sure that we're not working with mutated data!
 
-+ `blocksTravelled` — returns an integer with the number of blocks travelled.  In New York City, to travel East and West you cross avenues, and to travel North and South you cross streets.  To calculate the distance of in streets, you can use subtraction (eg. 13th street to 10th street is three blocks).  To calculate the distance of avenues travelled, you will need to the names and order of avenues in New York City.  You can use the following array to help with your calculation:
+By contrast, we also have methods like `appendDriver()`, which simply adds a driver to the end of the `drivers` array and returns the _new_ array, leaving the existing array untouched. This flow is preferable to mutating state because we have complete control over what's going into and coming out of the function.
 
-`let eastWest =  ['1st Avenue', '2nd Avenue', '3rd Avenue', 'Lexington Avenue', 'Park', 'Madison Avenue', '5th Avenue']`
+## Run those tests!
 
-So to travel from 15th Street and 1st Avenue to 20th Street and Lexington Avenue is to travel eight blocks (five blocks North and three blocks West).
+You'll notice that the first test asks for an array called `drivers`, set to an initial value of `["Milo", "Otis", "Garfield"]`.
 
-+ `estimatedTime` —  The method returns the number of minutes estimated for the trip.  The estimated time depends on the distance in blocks and whether the trip is occurring during peak hours or off peak hours. During off peak hours, a driver travels three blocks in a minute, while during peak hours a driver travels an estimated two blocks in a minute.
+In our test file, we're going to reset this array to your initial value after every test. Some of our tests manipulate arrays in place, and we want to be sure that we can get back to a blank slate between tests.
 
-<p class='util--hide'>View <a href='https://learn.co/lessons/js-classes-travel-lab' title='Classes Travel in JS Lab '>Classes Travel in JS Lab</a> on Learn.co and start learning to code for free.</p>
+Why is a blank slate important? We want our programs to be predictable: this makes them more robust, easier to maintain, and less prone to bugs. One way to achieve predictability is by isolating our tests from one another, meaning that no test should depend on the outcome or process of any other test. That way, tests can run in any order and test _known_ inputs and environments, rather than depending on other tests running first and modifying the entire environment.
+
+Remember the workflow:
+
+1. Run `learn-test`.
+
+2. Read the errors; vocalize what they're asking you to do.
+
+3. Write code; repeat steps 1 and 2 often until a test passes.
+
+4. Repeat as needed for further tests.
+
+5. Run `learnsubmit` when finished!
+
+If you open up `test/indexTest.js`, you will see that in the `beforeEach` block we initialize our `driver` array values so that you can focus on what really matters — understanding how to manipulate arrays in JavaScript.
+
+## Resources
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/javascript-arrays-lab'>Javascript Arrays Lab</a> on Learn.co and start learning to code for free.</p>
