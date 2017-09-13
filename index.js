@@ -1,31 +1,25 @@
-function destructivelyAppendDriver (name) {
-  drivers.push(name);
+var driver = {}
+
+function updateDriverWithKeyAndValue(driver, key, value) {
+  return Object.assign({}, driver, { [key]: value })
 }
 
-function destructivelyPrependDriver (name) {
-  drivers.unshift(name);
+function destructivelyUpdateDriverWithKeyAndValue(driver, key, value) {
+  driver[key] = value
+
+  return driver
 }
 
-function destructivelyRemoveLastDriver () {
-  drivers.pop();
+function deleteFromDriverByKey(driver, key) {
+  const newObj = Object.assign({}, driver)
+
+  delete newObj[key]
+
+  return newObj
 }
 
-function destructivelyRemoveFirstDriver () {
-  drivers.shift();
-}
+function destructivelyDeleteFromDriverByKey(driver, key) {
+  delete driver[key]
 
-function appendDriver (name) {
-  return [...drivers, name];
-}
-
-function prependDriver (name) {
-  return [name, ...drivers];
-}
-
-function removeFirstDriver () {
-  return drivers.slice(1);
-}
-
-function removeLastDriver () {
-  return drivers.slice(0, drivers.length - 1);
+  return driver
 }
