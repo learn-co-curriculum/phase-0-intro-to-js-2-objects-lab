@@ -1,26 +1,29 @@
 {
-  "name": "javascript-strings-lab",
-  "version": "0.2.0",
-  "description": "JavaScript Strings Code-along for Learn.co",
+  "name": "js-data-structures-objects-lab",
+  "version": "0.1.0",
+  "description": "Practice manipulating objects",
   "main": "index.js",
+  "scripts": {
+    "postinstall": "gem install learn-co",
+    "test": "node_modules/browser-sync/bin/browser-sync.js start --config node_modules/learn-browser/bs-config.js"
+  },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/learn-co-curriculum/javascript-strings-lab.git"
+    "url": "git+ssh://git@github.com/learn-co-curriculum/js-data-structures-objects-lab.git"
   },
   "keywords": [
-    "learn",
-    "flatiron school",
     "javascript",
-    "strings",
-    "code-along"
+    "flatiron",
+    "learn",
+    "objects"
   ],
-  "author": "@gj",
+  "author": "Flatiron School",
   "license": "SEE LICENSE IN LICENSE.md",
   "bugs": {
-    "url": "https://github.com/learn-co-curriculum/javascript-strings-lab/issues"
+    "url": "https://github.com/learn-co-curriculum/js-data-structures-objects-lab/issues"
   },
-  "homepage": "https://github.com/learn-co-curriculum/javascript-strings-lab#readme",
+  "homepage": "https://github.com/learn-co-curriculum/js-data-structures-objects-lab#readme",
   "devDependencies": {
-    "learn-browser": "^0.1.6"
+    "learn-browser": "^0.1.12"
   }
 }
