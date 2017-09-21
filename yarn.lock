@@ -1205,9 +1205,9 @@ lcid@^1.0.0:
   dependencies:
     invert-kv "^1.0.0"
 
-learn-browser@^0.1.12:
-  version "0.1.12"
-  resolved "https://registry.yarnpkg.com/learn-browser/-/learn-browser-0.1.12.tgz#5f004db3ac06b9264fcc57348ffac4c60b4df365"
+learn-browser@^0.1.13:
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/learn-browser/-/learn-browser-0.1.13.tgz#0d08e96966984f255383e37e4ed2beb7688f3971"
   dependencies:
     browser-sync "^2.18.13"
     chai "^4.1.0"
