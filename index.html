@@ -1,21 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Mocha</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="node_modules/mocha/mocha.css" />
+    <meta charset="utf-8">
+
+    <title>JavaScript Objects Lab</title>
+    <meta name="description" content="Practice manipulating JavaScript objects">
+    <meta name="author" content="Flatiron School">
+
+    <!-- Include Mocha's stylesheet to style test results -->
+    <link rel="stylesheet" href="node_modules/mocha/mocha.css">
   </head>
+
   <body>
-    <main id="main">
-    </main>
-    <script src="index.js"></script>
-    <!-- Open this file and call `mocha.run()` in console to run tests -->
+    <!-- <div> for Mocha to display test results. -->
     <div id="mocha"></div>
+
+    <!-- Include Mocha and set it up for BDD-style testing. -->
     <script src="node_modules/mocha/mocha.js"></script>
-    <script src="node_modules/expect/umd/expect.min.js"></script>
     <script>mocha.setup('bdd');</script>
+
+    <!-- Include Chai as the matcher library. -->
+    <script src="node_modules/chai/chai.js"></script>
+
+    <!-- Include the student's JavaScript file. -->
     <script src="index.js"></script>
-    <script src="test/index-test.js"></script>
+
+    <!-- Include the JavaScript file containing the tests. -->
+    <script src="test/indexTest.js"></script>
+
+    <!-- Include Flatiron School's test runner to push results to Learn. -->
+    <script src="node_modules/learn-browser/learnBrowser.min.js"></script>
   </body>
 </html>
