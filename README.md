@@ -38,7 +38,7 @@ non-destructively. Think about how we learned to use `Object.assign()`. What
 happens if we do this:
 
 ```js
-const obj = { foo: 'bar' };
+const obj = { foo: "bar" };
 
 const newObj = Object.assign({}, obj);
 

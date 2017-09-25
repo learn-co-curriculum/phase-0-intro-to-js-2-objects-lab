@@ -45,3 +45,10 @@ jspm_packages
 /tmp
 
 
+
+# macOS system directory file
+.DS_Store
+
+# Package lockfiles
+package-lock.json
+yarn.lock
