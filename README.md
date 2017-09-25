@@ -7,8 +7,8 @@ concepts into practice.
 
 ## Objectives
 
-1. Create `Object`s
-2. Perform operations on `Object`s
+1.  Create `Object`s
+2.  Perform operations on `Object`s
 
 ## Instructions
 
@@ -38,7 +38,7 @@ non-destructively. Think about how we learned to use `Object.assign()`. What
 happens if we do this:
 
 ```js
-const obj = { foo: "bar" };
+const obj = { foo: 'bar' };
 
 const newObj = Object.assign({}, obj);
 
