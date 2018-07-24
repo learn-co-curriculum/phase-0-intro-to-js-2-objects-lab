@@ -14,7 +14,7 @@ describe('drivers', function () {
       driver.name = 'Sam';
     });
 
-    it('returns an driver with the orignal key value pairs and the new key value pair', function () {
+    it('returns a driver with the orignal key value pairs and the new key value pair', function () {
       expect(updateDriverWithKeyAndValue(driver, 'address', '11 Broadway')).to.eql({
         name: 'Sam',
         address: '11 Broadway'
