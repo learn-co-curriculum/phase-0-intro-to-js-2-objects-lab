@@ -5,8 +5,6 @@
 We covered the concepts of `Object`s in JavaScript. Now it's time to put the
 concepts into practice.
 
-hello
-
 ## Objectives
 
 1. Create `Object`s
