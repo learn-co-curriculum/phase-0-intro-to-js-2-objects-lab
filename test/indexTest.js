@@ -1,4 +1,3 @@
-const expect = chai.expect;
 
 describe('drivers', function () {
   it('defines a `driver` driver', function () {
