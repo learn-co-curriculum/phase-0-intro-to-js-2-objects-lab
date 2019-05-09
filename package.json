@@ -1,21 +1,24 @@
 {
   "name": "js-data-structures-objects-lab",
   "version": "0.1.0",
-  "description": "Practice manipulating objects",
+  "description": "Learn.co's practice with manipulating JavaScript objects.",
   "main": "index.js",
   "scripts": {
-    "postinstall": "gem install learn-co",
-    "test": "node_modules/browser-sync/bin/browser-sync.js start --config node_modules/learn-browser/bs-config.js"
+    "test": "mocha -R mocha-multi --reporter-options spec=-,json=.results.json"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/learn-co-curriculum/js-data-structures-objects-lab.git"
+    "url": "git+https://github.com/learn-co-curriculum/js-data-structures-objects-lab.git"
   },
   "keywords": [
     "javascript",
-    "flatiron",
-    "learn",
-    "objects"
+    "for",
+    "while",
+    "loops",
+    "looping",
+    "learn.co",
+    "flatiron school",
+    "code-along"
   ],
   "author": "Flatiron School",
   "license": "SEE LICENSE IN LICENSE.md",
@@ -24,6 +27,17 @@
   },
   "homepage": "https://github.com/learn-co-curriculum/js-data-structures-objects-lab#readme",
   "devDependencies": {
-    "learn-browser": "^0.1.13"
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "1.7.0",
+    "chai": "^4.2.0",
+    "file-system": "^2.2.2",
+    "jsdom": "^9.2.1",
+    "mocha": "^5.2.0",
+    "mocha-jsdom": "~1.1.0",
+    "mocha-multi": "^1.0.1",
+    "sinon": "^7.3.1"
+  },
+  "dependencies": {
+    "expect": "^24.7.1"
   }
 }
