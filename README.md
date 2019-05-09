@@ -7,8 +7,8 @@ concepts into practice.
 
 ## Objectives
 
-1. Create `Object`s
-2. Perform operations on `Object`s
+1.  Create `Object`s
+2.  Perform operations on `Object`s
 
 ## Instructions
 
