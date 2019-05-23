@@ -21,7 +21,7 @@ You'll be writing four functions:
 
 - `updateDriverWithKeyAndValue()`- this function should take in a `driver`
   `Object`, a `key` and a `value`. The function should not mutate the `driver`
-  parameter and return a new `driver` that has an updated `value` for the `key`
+  parameter and should return a new `driver` that has an updated `value` for the `key`
   passed in.
 - `destructivelyUpdateDriverWithKeyAndValue()` - this function should work the
   same as `updateDriverWithKeyAndValue()` but it _should_ mutate the `driver`
