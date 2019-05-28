@@ -1,5 +1,3 @@
-const sinon = require( 'sinon' )
-
 describe('drivers', function() {
   it('defines a `driver` driver', function() {
     expect(typeof driver).to.equal('object');

@@ -26,18 +26,15 @@
     "url": "https://github.com/learn-co-curriculum/js-data-structures-objects-lab/issues"
   },
   "homepage": "https://github.com/learn-co-curriculum/js-data-structures-objects-lab#readme",
-  "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "1.7.0",
+  "devDependencies": {},
+  "dependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
     "chai": "^4.2.0",
     "file-system": "^2.2.2",
-    "jsdom": "^9.2.1",
+    "jsdom": "^9.0",
     "mocha": "^5.2.0",
     "mocha-jsdom": "~1.1.0",
-    "mocha-multi": "^1.0.1",
-    "sinon": "^7.3.1"
-  },
-  "dependencies": {
-    "expect": "^24.7.1"
+    "mocha-multi": "^1.0.1"
   }
 }
