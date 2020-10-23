@@ -67,5 +67,3 @@ them.
 ## Resources
 
 - [MDN: Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-
-<p class='util--hide'>View <a href='https://learn.co/lessons/js-data-structures-objects-lab'>Objects Lab</a> on Learn.co and start learning to code for free.</p>
