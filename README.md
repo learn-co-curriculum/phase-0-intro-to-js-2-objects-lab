@@ -26,12 +26,12 @@ small, so to begin with we'll only keep track of the employee's name and street
 address.
 
 To start, define a `employee` variable and assign it to an `Object` containing
-`name` and `streetAddress` keys. You can set it to whatever values you like.
-Various updates will be applied to this variable (destructively and
-non-destructively) in this lab.
+`name` and `streetAddress` keys; you can use whatever values you like. Use
+literal syntax to create your `Object`. Various updates will be applied to this
+variable (destructively and non-destructively) in this lab.
 
-Once you've set up the `employee` variable, you'll need to create the following
-four functions:
+Once you've initialized the `employee` Object, you'll need to create the
+following four functions:
 
 - `updateEmployeeWithKeyAndValue()`: this function should take in three
   arguments: a `employee` `Object`, a `key` and a `value`. This function should
