@@ -1,68 +1,55 @@
 # Objects Lab
 
-## Problem Statement
+## Learning Goals
+
+- Create an `Object`
+- Perform operations on an `Object`
+
+## Introduction
 
 We covered the concepts of `Object`s in JavaScript. Now it's time to put the
 concepts into practice.
 
-## Learning Goals
-
-- Create `Object`s
-- Perform operations on `Object`s
+If you haven't already, fork and clone this lab into your local environment.
+Navigate into its directory in the terminal, then run `code .` to open the files
+in Visual Studio Code. Finally, run `npm install` to install the lab's
+dependencies.
 
 ## Instructions
 
-Follow the steps below, running `learn` as you go to get additional information
-from the tests. To start, define a `driver` variable and assign it to an
-`Object`. Various updates will be applied to this variable (destructively and
+Follow the steps below, running `npm test` as you go to get additional information
+from the tests.
+
+Let's say we are working on a program that will keep track of a company's employees. We want to store each `employee` as an `Object`. We're starting small, so to begin with we'll only keep track of the employee's name and street address.
+
+To start, define a `employee` variable and assign it to an `Object` containing
+`name` and `streetAddress` keys. You can set it to whatever values you like.
+Various updates will be applied to this variable (destructively and
 non-destructively) in this lab.
 
-You'll be writing four functions:
+Once you've set up the `employee` variable, you'll need to create the following four
+functions:
 
-- `updateDriverWithKeyAndValue()`- this function should take in three arguments:
-  a `driver` `Object`, a `key` and a `value`. This function should not mutate the
-  `driver` and should return a _new_ `driver` that has an updated
-  `value` for the `key` passed in.
-- `destructivelyUpdateDriverWithKeyAndValue()` - this function should work the
-  same as `updateDriverWithKeyAndValue()` but it _should_ mutate the `driver`
-  parameter passed in.
-- `deleteFromDriverByKey()` - this function should take in a `driver` `Object`
-  and a `key`. It should delete the `key`/`value` pair for the `key` that was
-  passed in from the `driver` `Object`. This should all not actually mutate the
-  `driver` passed in.
-- `destructivelyDeleteFromDriverByKey()` - this function should work the same as
-  `deleteFromDriverByKey()` but it _should_ mutate the `driver` passed in. Be
-  sure to consider whether and how using dot notation vs. bracket notation might
-  affect your solution.
-
-**HINT**: You might find `deleteFromDriverByKey()` to be a bit hard to write
-non-destructively. Think about how we learned to use `Object.assign()`. What
-happens if we do this:
-
-```js
-const obj = { foo: "bar" };
-
-const newObj = Object.assign({}, obj);
-
-newObj;
-// => { foo: "bar" }
-
-delete newObj['foo'];
-// => true
-
-newObj;
-// => {}
-
-obj;
-// => { foo: "bar" }
-```
-
-Something to keep in mind!
+- `updateEmployeeWithKeyAndValue()`: this function should take in three arguments:
+  a `employee` `Object`, a `key` and a `value`. This function should not mutate
+  the `employee`; it should return a _new_ `Object` that has an updated `value`
+  for the `key` passed in.
+- `destructivelyUpdateEmployeeWithKeyAndValue()`: this function should work the
+  same as `updateEmployeeWithKeyAndValue()` but it _should_ mutate the `employee`
+  `Object` passed in.
+- `deleteFromEmployeeByKey()`: this function should take in a `employee` `Object`
+  and a `key`. It should delete the property with that `key` from the `employee`
+  `Object`. This should not mutate the original `employee` `Object`; it should
+  return a _new_ `Object` that doesn't include the identified key-value pair.
+- `destructivelyDeleteFromEmployeeByKey()`: this function should work the same as
+  `deleteFromEmployeeByKey()` but it _should_ mutate the `employee` `Object`.
+  
+As you work on your functions, be sure to think about when to use dot notation
+vs. bracket notation.
 
 ## Conclusion
 
-In this lab, we worked with creating `Object`s and performing operations on
-them.
+In this lab, we practiced creating an `Object` and performing operations on it.
 
 ## Resources
 
