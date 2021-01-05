@@ -32,8 +32,8 @@ You'll be writing four functions:
   `driver` passed in.
 - `destructivelyDeleteFromDriverByKey()` - this function should work the same as
   `deleteFromDriverByKey()` but it _should_ mutate the `driver` passed in. Be
-  sure and consider whether dot-notation or bracket-notation might affect your
-  solution.
+  sure to consider whether and how using dot notation vs. bracket notation might
+  affect your solution.
 
 **HINT**: You might find `deleteFromDriverByKey()` to be a bit hard to write
 non-destructively. Think about how we learned to use `Object.assign()`. What
