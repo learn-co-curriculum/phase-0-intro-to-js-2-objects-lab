@@ -18,7 +18,8 @@ dependencies.
 ## Instructions
 
 Follow the steps below, running `npm test` as you go to get additional
-information from the tests.
+information from the tests. (Phase 1 students who have set up the Learn gem
+should run `learn test` as usual rather than `npm test`.)
 
 Let's say we are working on a program that will keep track of a company's
 employees. We want to store each `employee` as an `Object`. We're starting
