@@ -34,7 +34,7 @@ Once you've initialized the `employee` Object, you'll need to create the
 following four functions:
 
 - `updateEmployeeWithKeyAndValue()`: this function should take in three
-  arguments: a `employee` `Object`, a `key` and a `value`. This function should
+  arguments: an `employee` `Object`, a `key` and a `value`. This function should
   not mutate the `employee`; it should return a _new_ `Object` that has an
   updated `value` for the `key` passed in. **Hint**: use the spread operator!
 - `destructivelyUpdateEmployeeWithKeyAndValue()`: this function should work the
