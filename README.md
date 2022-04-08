@@ -24,7 +24,7 @@ employees. We want to store each `employee` as an `Object`. We're starting
 small, so to begin with we'll only keep track of the employee's name and street
 address.
 
-To start, define a `employee` variable and assign it to an `Object` containing
+To start, assign an `employee` variable to an `Object` containing
 `name` and `streetAddress` keys; you can use whatever values you like. Use
 literal syntax to create your `Object`. Various updates will be applied to this
 variable (destructively and non-destructively) in this lab.
