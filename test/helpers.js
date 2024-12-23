@@ -1,21 +1,35 @@
-const chai = require('chai')
-global.expect = chai.expect
-const fs = require('fs')
-const jsdom = require('mocha-jsdom')
-const path = require('path')
-const babel = require("@babel/core");
-const url = "http://localhost"
+import { expect } from 'chai';
+global.expect = expect;
 
-const html = fs.readFileSync(path.resolve(__dirname, '..', 'index.html'), 'utf-8')
+import fs from 'fs';
+import { JSDOM } from 'jsdom';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-const babelResult = babel.transformFileSync(
-  path.resolve(__dirname, '..', 'index.js'), {
-    presets: ['@babel/env']
-  }
-);
+// Define __filename and __dirname for ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-const src = babelResult.code
+// Read the HTML and JavaScript files
+const html = fs.readFileSync(path.resolve(__dirname, '..', 'index.html'), 'utf-8');
+const jsFile = path.resolve(__dirname, '..', 'index.js');
 
-jsdom({
-  html, src, url
+// Read raw JavaScript code without transformation
+const jsCode = fs.readFileSync(jsFile, 'utf-8');
+
+// Set up JSDOM
+const dom = new JSDOM(html, {
+  runScripts: 'dangerously',
+  url: 'http://localhost',
 });
+
+// Inject the raw JavaScript code into the JSDOM environment
+dom.window.eval(jsCode);
+
+// Make JSDOM's `window` and `document` globally accessible
+global.window = dom.window;
+global.document = dom.window.document;
+
+// Export dom as default only if needed (remove this if unused)
+export default dom;
+
