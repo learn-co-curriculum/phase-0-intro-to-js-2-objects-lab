@@ -40,7 +40,7 @@ describe('employees', function() {
 
   describe('deleteFromEmployeeByKey(employee, key)', function () {
     it('deletes `key` from a clone of employee and returns the new employee (it is non-destructive)', function () {
-      let newEmployee = deleteFromEmployeeByKey(employee, 'name');
+       let newEmployee = deleteFromEmployeeByKey(employee, 'name');
 
       expect(newEmployee['name']).to.equal(undefined);
       expect(typeof newEmployee).to.equal('object');
