@@ -4,7 +4,7 @@
   "description": "Learn.co's practice with manipulating JavaScript objects.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout 5000 -R mocha-multi --reporter-options spec=-,json=.results.json --timeout 10000"
+    "test": "mocha --timeout 5000 -R mocha-multi --reporter-options spec=-,json=.results.json --timeout 10000 --bail"
   },
   "repository": {
     "type": "git",
